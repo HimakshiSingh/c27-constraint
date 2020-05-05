@@ -4,14 +4,19 @@ constructor(bodyA,bodyB){
 var options = {
    bodyA: bodyA,
    bodyB: bodyB,
-   stiffnes = 0.004,
-   length = 10
+   stiffness : 0.004,
+   length : 10
 
 }
   this.chain = Constraint.create(options)
-  World .add(world,chain)
+  World .add(world,this.chain)
     
   
 }
-
+display(){
+  pointA = this.chain.bodyA.position
+  pointB = this.chain.bodyB.position
+  strokeWeight(4)
+  //line (pointA.x,pointA.y,pointB.x,pointB.y)
+}
 }
